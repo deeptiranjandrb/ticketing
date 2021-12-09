@@ -7,10 +7,11 @@ deploy:
 build:
   # local:
   #   push: false
-  googleCloudBuild:
-    projectId: supple-outlet-332715
+  # googleCloudBuild:
+  #   projectId: supple-outlet-332715
   artifacts:
-    - image: us.gcr.io/supple-outlet-332715/auth
+    # - image: us.gcr.io/supple-outlet-332715/auth
+    - image: deeptiranjandrb/auth
       context: auth
       docker:
         dockerfile: Dockerfile
