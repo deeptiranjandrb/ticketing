@@ -16,11 +16,13 @@ spec:
         - name: auth
           image: deeptiranjandrb/auth
           env:
-           - name: JWT_KEY
-             valueFrom:
-               secretKeyRef:
-                  name: jwt-secret
-                  key: JWT_KEY
+          - name: MONGO_URI
+            value: 'mongodb://auth-mongo-srv:27017/auth'
+          - name: JWT_KEY
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secret
+                key: JWT_KEY
 
 ---
 apiVersion: v1
