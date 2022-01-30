@@ -1,14 +1,13 @@
+import { currentUser, errorHandler, NotFoundError } from '@drbgittix/common';
+import { json } from 'body-parser';
+import cookieSession from 'cookie-session';
 import express from 'express';
 import 'express-async-errors';
-import mongoose from 'mongoose';
-import cookieSession from 'cookie-session';
-import { json } from 'body-parser';
-import { errorHandler,NotFoundError,currentUser } from '@drbgittix/common';
+import { indexTicketRouter } from '../src/routes/index';
+import { createTicketRouter } from '../src/routes/new';
+import { showTicketRouter } from '../src/routes/show';
+import { updateTicketRouter } from '../src/routes/update';
 
-import {createTicketRouter} from '../src/routes/new';
-import {showTicketRouter} from '../src/routes/show';
-import {indexTicketRouter} from '../src/routes/index';
-import {updateTicketRouter} from '../src/routes/update';
 const app = express();
 
 app.set('trust proxy', true);
@@ -29,4 +28,5 @@ app.all('*',() => {
 });
 app.use(errorHandler);
 
-export {app};
+export { app };
+
