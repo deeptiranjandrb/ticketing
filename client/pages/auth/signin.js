@@ -19,7 +19,7 @@ export default () => {
   }
     return <form onSubmit={onSubmit}>
         <h1>Sign In</h1>
-        <div className="form-group">
+        <div className="mb-3">
             <label>Email Address</label>
             <input 
             value={email} 
@@ -27,7 +27,7 @@ export default () => {
             className="form-control" 
             id="email" />
         </div>
-        <div className="form-group">
+        <div className="mb-3">
             <label>Password</label>
             <input 
             value={password} 
